@@ -1,0 +1,27 @@
+import React from 'react';
+
+import ImageCarousel from '../ImageCarousel';
+import ImageGallery from '../ImageGalery';
+import  { carousel, gallery } from './../../db';
+
+import './style.css';
+
+const HomePage = () => {
+    return(
+        <main className="main">
+            <ImageCarousel carousel={carousel}/>
+            <section id="homepage__container">
+                <h1 className="homepage__title">Text of HomePage</h1>
+                <p className="homepage__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi id eaque laudantium vel, unde maxime perspiciatis 
+                    doloremque nemo illum esse libero deleniti maiores beatae et ratione molestiae? Illum quos voluptatibus fugiat ipsum. 
+                    Officiis quia sequi ducimus, veniam cumque iure, repellendus totam magni itaque consectetur quas asperiores aliquid 
+                    dicta blanditiis ipsum officia numquam quibusdam enim tempore, saepe consequuntur distinctio nostrum ad.
+                </p>
+            </section>
+            <ImageGallery gallery={gallery}/>
+        </main>
+    );
+};
+
+export default HomePage;

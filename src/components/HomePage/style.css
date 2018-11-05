@@ -1,0 +1,13 @@
+#homepage__container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.homepage__title {
+    text-align: center;
+}
+
+.homepage__text {
+    text-align: left;
+}
