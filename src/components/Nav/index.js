@@ -7,14 +7,14 @@ class Nav extends React.Component {
     constructor() {
         super();
         this.state = {
-            isToggleOn: false
+            isActive: false
         };
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick() {
         this.setState(state => ({
-          isToggleOn: !state.isToggleOn
+            isActive: !state.isActive
         }));
     }
 
@@ -27,7 +27,7 @@ class Nav extends React.Component {
                     <div className="Navbar__Link Navbar__Link-toggle" onClick={this.handleClick} >
                         <img src="/images/icons/icon-menu.svg" alt="icon menu" />
                     </div>
-                    <div className={this.state.isToggleOn ? "Navbar__Items Navbar__ToggleShow" : "Navbar__Items"}>
+                    <div className={this.state.isActive ? "Navbar__Items Navbar__ToggleShow" : "Navbar__Items"}>
                         <NavLink to="/media" activeClassName="Navbar__Link--active" className="Navbar__Link" >Media</NavLink>
                         <NavLink to="/upload" activeClassName="Navbar__Link--active" className="Navbar__Link">Upload</NavLink>
                         <NavLink to="/contact" activeClassName="Navbar__Link--active" className="Navbar__Link">Contact</NavLink>

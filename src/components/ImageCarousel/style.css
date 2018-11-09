@@ -27,12 +27,14 @@
 
 .slide__text {
     position: absolute;
-    font-size: 7rem;
+    font-size: 5rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px rgb(134, 134, 134), -1px -1px rgb(134, 134, 134);
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .carousel__button {
@@ -42,7 +44,7 @@
     align-items: center;
     height: 100%;
     width: 10%;
-    color: rgba(97, 97, 97, 0.5);
+    color: rgba(139, 139, 139, 0.5);
     cursor: pointer;
     z-index: 2;
 }
@@ -57,7 +59,7 @@
 }
 
 .carousel__button:hover .button__arrow {
-    color: rgb(126, 126, 126);
+    color: rgb(255, 255, 255);
     font-size: 4rem;
 }
 

@@ -4,23 +4,24 @@
     margin: auto;
     font-family: sans-serif;
     max-width: 1200px;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 .Navbar__Link {
     padding-right: 8px;
+    font-size: 3rem;
 }
 a:link.Navbar__Link {
     text-decoration: none;
 }
 
 a:visited.Navbar__Link {
-    color: black;
+    color: #fff;
 }
 
 .Navbar__Link--active,
 a:hover.Navbar__Link {
-    font-size: 2rem;
+    font-size: 4rem;
 }
 
 .Navbar__Items {

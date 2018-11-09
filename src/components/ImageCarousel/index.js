@@ -13,7 +13,7 @@ class ImageCarousel extends React.Component {
     }
 
     onNextClick() {
-        if(this.state.activeIndex < 3) {
+        if(this.state.activeIndex < this.props.carousel.length -1) {
             this.setState({activeIndex: this.state.activeIndex + 1});
         } else {
             this.setState({activeIndex: 0});
@@ -24,7 +24,7 @@ class ImageCarousel extends React.Component {
         if(this.state.activeIndex > 0) {
             this.setState({activeIndex: this.state.activeIndex - 1});
         } else {
-            this.setState({activeIndex: 3});
+            this.setState({activeIndex: this.props.carousel.length -1});
         }
     }
 
@@ -33,6 +33,7 @@ class ImageCarousel extends React.Component {
             transform:`translateX(${this.state.activeIndex * -25}%)`,
             transition: '0.4s'
         }
+        
         return(
             <section className="carousel">
                 <div onClick={this.onPrevClick} className="carousel__button">

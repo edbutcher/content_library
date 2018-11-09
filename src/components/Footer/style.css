@@ -1,0 +1,10 @@
+#footer {
+    height: 8rem;
+    width: 100%;
+    background: rgba(97, 97, 97, 0.5);
+}
+
+.footer__container {
+    max-width: 1200px;
+    margin: auto;
+}

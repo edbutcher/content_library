@@ -5,6 +5,7 @@ import HomePage from '../components/HomePage';
 import ContactPage from '../components/ContactPage';
 import MediaPage from '../components/MediaPage';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import NotFoundPage from '../components/NotFoundPage';
 
 const AppRouter = () => (
@@ -17,6 +18,7 @@ const AppRouter = () => (
         <Route path="/contact" component={ContactPage} />
         <Route component={NotFoundPage} />
       </Switch>
+      <Footer />
     </div>
   </Router>
 );
