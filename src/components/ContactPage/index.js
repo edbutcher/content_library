@@ -1,12 +1,12 @@
 import React from 'react';
 
-import GoogleMapPart from './../GoogleMapPart';
+// import GoogleMapPart from './../GoogleMapPart';
 import './style.css';
 
 const ContactPage = () => {
     return(
         <main>
-            <section>
+            <section >
                 <div className="contactTitle">
                     <div className="contactTitle__text">
                         <h1>Content Library</h1>
@@ -17,12 +17,12 @@ const ContactPage = () => {
             </section>
             <section className="contact__container">
                 <div>
-                    <GoogleMapPart isMarkerShown
+                    {/* <GoogleMapPart isMarkerShown
                     googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcm8WQqIqPvZzV4cSLiE6H4Z1dp6jufmI&v=3.exp&libraries=geometry,drawing,places"
                         loadingElement={<div style={{ height: `100%` }} />}
                         containerElement={<div style={{ height: `400px` }} />}
                         mapElement={<div style={{ height: `100%` }} />}
-                    />
+                    /> */}
                 </div>
                 <div>
                     <p>Adress: 1, Maidan Nezalezhnosti, Kyiv, 02000</p>
