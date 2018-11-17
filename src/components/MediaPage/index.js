@@ -1,6 +1,9 @@
 import React from 'react';
 
 import axios from 'axios';
+import VideoPart from './../VideoPart';
+import ImagePart from './../ImagePart';
+import AudioPart from './../AudioPart';
 import './style.css';
 
 class MediaPage extends React.Component {
@@ -30,37 +33,9 @@ class MediaPage extends React.Component {
                     data.map((item, index) => {
                         return(
                             <div key={index}>
-                                <div className="gallery__item">
-                                    { 
-                                        item.type === 'image/jpeg' && 
-                                        <img 
-                                            src={`${url}${item.fileName}`} 
-                                            alt={item.fileName ? item.fileName : 'image crash'}
-                                        />
-                                    }
-                                    { 
-                                        item.type === 'audio/mpeg' && 
-                                        <audio controls>
-                                            <source 
-                                                src={`${url}${item.fileName}`} 
-                                                type={item.type} 
-                                                alt={item.fileName ? item.fileName : 'image crash'}
-                                            />
-                                        </audio>
-                                    }
-                                    {
-                                        item.type === 'video/mp4' && 
-                                        <video controls>
-                                            <source 
-                                                src={`${url}${item.fileName}`} 
-                                                type={item.type}
-                                            />
-                                        </video>
-                                    }
-                                </div>
-                                <div>
-                                    <h1>{item.fileName}</h1>
-                                </div>
+                                { item.type === 'image/jpeg' && <ImagePart image={item} /> }
+                                { item.type === 'audio/mpeg' && <AudioPart audio={item} /> }
+                                { item.type === 'video/mp4' && <VideoPart video={item} /> }
                             </div>
                         )
                     })

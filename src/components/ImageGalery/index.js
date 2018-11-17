@@ -2,10 +2,10 @@ import React from 'react';
 
 import './style.css';
 
-const ImageGallery = (props) => {
+const ImageGallery = () => {
     return(
         <section id="gallery">
-            {
+            {/* {
                 props.gallery.map((item, index) => {
                     return (
                         <div className="gallery__item" key={index}>
@@ -13,7 +13,7 @@ const ImageGallery = (props) => {
                         </div>
                     )
                 })
-            }
+            } */}
         </section>
     );
 };

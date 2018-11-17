@@ -1,19 +1,41 @@
 import React from 'react';
 
+import sound from './../../images/carousel/sound.jpg';
+import video from './../../images/carousel/video.jpg';
+import text from './../../images/carousel/text.jpg';
+import add_yours from './../../images/carousel/add_yours.jpg';
 import './style.css';
 
 class ImageCarousel extends React.Component {
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.state = {
-            activeIndex: 0
+            activeIndex: 0,
+            carousel: [
+                {
+                    "title": "watch the video",
+                    "src": video
+                },
+                {
+                    "title": "listen to audio",
+                    "src": sound
+                },
+                {
+                    "title": "read the text",
+                    "src": text
+                },
+                {
+                    "title": "add yours",
+                    "src": add_yours
+                }
+            ]
         };
         this.onNextClick = this.onNextClick.bind(this);
         this.onPrevClick = this.onPrevClick.bind(this);
     }
 
     onNextClick() {
-        if(this.state.activeIndex < this.props.carousel.length -1) {
+        if(this.state.activeIndex < this.state.carousel.length -1) {
             this.setState({activeIndex: this.state.activeIndex + 1});
         } else {
             this.setState({activeIndex: 0});
@@ -24,7 +46,7 @@ class ImageCarousel extends React.Component {
         if(this.state.activeIndex > 0) {
             this.setState({activeIndex: this.state.activeIndex - 1});
         } else {
-            this.setState({activeIndex: this.props.carousel.length -1});
+            this.setState({activeIndex: this.state.carousel.length -1});
         }
     }
 
@@ -45,11 +67,11 @@ class ImageCarousel extends React.Component {
                 
                 <div className="carousel__container" style={sliderStyle}>
                     {
-                        this.props.carousel.map((item, index) => {
+                        this.state.carousel.map((item, index) => {
                             return (
                                 <div className="slide" key={index}>
                                     <h1 className="slide__text">{item.title}</h1>
-                                    <img className="slide__image" src={item.src} alt={item.name}/>
+                                    <img className="slide__image" src={item.src} alt={item.title}/>
                                 </div>
                             )
                         })

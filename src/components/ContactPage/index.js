@@ -1,6 +1,7 @@
 import React from 'react';
 
 // import GoogleMapPart from './../GoogleMapPart';
+import conversation from './../../images/contact/conversation.jpg';
 import './style.css';
 
 const ContactPage = () => {
@@ -9,10 +10,10 @@ const ContactPage = () => {
             <section >
                 <div className="contactTitle">
                     <div className="contactTitle__text">
-                        <h1>Content Library</h1>
+                        <h1>Library</h1>
                         <p>We strive to give everyone the opportunity to show themselves and see others.</p>
                         </div>
-                    <img className="contactTitle__image" src="/images/contact/conversation.jpg" alt="img"/>
+                    <img className="contactTitle__image" src={conversation} alt="img"/>
                 </div>
             </section>
             <section className="contact__container">

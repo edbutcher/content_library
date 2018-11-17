@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { NavLink } from 'react-router-dom';
+import iconMenu from './../../images/icons/icon-menu.svg';
 import './style.css';
 
 class Nav extends React.Component {
@@ -25,7 +26,7 @@ class Nav extends React.Component {
                         Library
                     </NavLink>
                     <div className="Navbar__Link Navbar__Link-toggle" onClick={this.handleClick} >
-                        <img src="/images/icons/icon-menu.svg" alt="icon menu" />
+                        <img src={iconMenu} alt="icon menu" />
                     </div>
                     <div className={this.state.isActive ? "Navbar__Items Navbar__ToggleShow" : "Navbar__Items"}>
                         <NavLink to="/media" activeClassName="Navbar__Link--active" className="Navbar__Link" >Media</NavLink>

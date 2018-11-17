@@ -2,14 +2,15 @@ import React from 'react';
 
 import ImageCarousel from '../ImageCarousel';
 import ImageGallery from '../ImageGalery';
-import  { carousel, gallery } from './../../db';
 
 import './style.css';
 
 const HomePage = () => {
     return(
         <main className="main">
-            <ImageCarousel carousel={carousel}/>
+
+            <ImageCarousel />
+
             <section className="homepage__container">
                 <h1 className="homepage__title">Text of HomePage</h1>
                 <p className="homepage__text">
@@ -19,7 +20,9 @@ const HomePage = () => {
                     dicta blanditiis ipsum officia numquam quibusdam enim tempore, saepe consequuntur distinctio nostrum ad.
                 </p>
             </section>
-            <ImageGallery gallery={gallery}/>
+
+            <ImageGallery />
+
             <section className="homepage__container">
                 <h1 className="homepage__title">Text of HomePage</h1>
                 <p className="homepage__text">
