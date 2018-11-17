@@ -1,9 +1,13 @@
 import React from 'react';
 
 import axios from 'axios';
-import VideoPart from './../VideoPart';
-import ImagePart from './../ImagePart';
-import AudioPart from './../AudioPart';
+import { Link } from 'react-router-dom';
+
+import headphones from './../../images/icons/headphones.svg';
+import picture from './../../images/icons/picture.svg';
+import videoCamera from './../../images/icons/video-camera.svg';
+// import openBook from './../../images/icons/open-book-top-view.svg';
+
 import './style.css';
 
 class MediaPage extends React.Component {
@@ -23,24 +27,30 @@ class MediaPage extends React.Component {
 
     render() {
         const { data } = this.state;
-        const url = 'http://localhost:9000/file/';
 
         return(
             <div className="media__container">
-                <div>Media Page!</div>
                 <div>Searching input</div>
-                {
-                    data.map((item, index) => {
-                        return(
-                            <div key={index}>
-                                { item.type === 'image/jpeg' && <ImagePart image={item} /> }
-                                { item.type === 'audio/mpeg' && <AudioPart audio={item} /> }
-                                { item.type === 'video/mp4' && <VideoPart video={item} /> }
-                            </div>
-                        )
-                    })
-                }
-                
+                <div className="mediapage__container">
+                    {
+                        data.map((item, index) => {
+                            return(
+                                (item.type === 'image/jpeg' || item.type === 'audio/mpeg' || item.type === 'video/mp4') && 
+                                <div className="meadia__item" key={index}>
+                                    <Link to={`/media/${item.fileId}`}>
+                                        { item.type === 'image/jpeg' && <img src={picture} alt="img of img" /> }
+                                        { item.type === 'audio/mpeg' && <img src={headphones} alt="music img" /> }
+                                        { item.type === 'video/mp4' && <img src={videoCamera} alt="video img" /> }
+                                        {/* { item.type === 'image/jpeg' && <img src={openBook} alt="text img" /> } */}
+                                        <div>
+                                            { item.fileName }
+                                        </div>
+                                    </Link>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
                 <div>Client pagination</div>
             </div>
             

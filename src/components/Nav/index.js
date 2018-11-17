@@ -30,7 +30,7 @@ class Nav extends React.Component {
                     </div>
                     <div className={this.state.isActive ? "Navbar__Items Navbar__ToggleShow" : "Navbar__Items"}>
                         <NavLink to="/media" activeClassName="Navbar__Link--active" className="Navbar__Link" >Media</NavLink>
-                        <NavLink to="/upload" activeClassName="Navbar__Link--active" className="Navbar__Link">Upload</NavLink>
+                        {/* <NavLink to="/upload" activeClassName="Navbar__Link--active" className="Navbar__Link">Upload</NavLink> */}
                         <NavLink to="/contact" activeClassName="Navbar__Link--active" className="Navbar__Link">Contact</NavLink>
                     </div>
             </nav>

@@ -11,15 +11,15 @@ class ImagePart extends React.Component {
     };
 
     render() {
-        let {fileName } = this.props.image;
-        let url = 'http://localhost:9000/file/';
+        // let {fileName, url } = this.props.image;
 
         return <div>
-            <h3>{fileName}</h3>
+            1
+            {/* <h3>{fileName}</h3>
             <img 
                 src={`${url}${fileName}`} 
                 alt={fileName ? fileName : 'image crash'}
-            />
+            /> */}
         </div>
     }
     

@@ -11,8 +11,7 @@ class VideoPart extends React.Component {
     };
 
     render() {
-        let {fileName, type } = this.props.video;
-        let url = 'http://localhost:9000/file/';
+        let {fileName, type, url } = this.props.video;
         
         return <div>
             <h3>{fileName}</h3>
