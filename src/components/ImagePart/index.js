@@ -11,16 +11,18 @@ class ImagePart extends React.Component {
     };
 
     render() {
-        // let {fileName, url } = this.props.image;
+        const selectedItem = this.props.selectedItem;
+        console.log(this.props.selectedItem)
+        let url = 'http://localhost:9000/file/';
 
-        return <div>
+        return (<div>
             1
-            {/* <h3>{fileName}</h3>
-            <img 
+            {/* <h3>{this.props.selectedItem.fileName}</h3> */}
+            {/* <img 
                 src={`${url}${fileName}`} 
                 alt={fileName ? fileName : 'image crash'}
             /> */}
-        </div>
+        </div>)
     }
     
 }

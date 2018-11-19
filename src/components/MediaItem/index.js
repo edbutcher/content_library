@@ -20,10 +20,9 @@ class MediaItem extends React.Component {
     }
 
     render() {
-        const { selectedItem } = this.state
+        let { selectedItem } = this.state
         // selectedItem.url = 'http://localhost:9000/file/';
-        console.log(selectedItem);
-        return <ImagePart image={selectedItem}/>
+        return <ImagePart selectedItem={selectedItem}/>
     }
     
 }
