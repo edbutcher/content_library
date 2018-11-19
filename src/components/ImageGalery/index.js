@@ -10,17 +10,17 @@ import r7 from '../../images/gallery/random_img_7.jpg';
 import r8 from '../../images/gallery/random_img_8.jpg';
 import r9 from '../../images/gallery/random_img_9.jpg';
 
-import style from './style.css';
+import './style.scss';
 
 const ImageGallery = () => {
     let images = [r1, r2, r3, r4, r4, r5, r6, r7, r8, r9];
     return(
-        <section className={style.gallery}>          
+        <section className="gallery">
             {
                 images.map((item, index) => {
                     return (
-                        <div className={style.gallery__item} key={index}>
-                            <img className={style.gallery__image} src={item} alt="img"/>
+                        <div className="gallery__item" key={index}>
+                            <img className="gallery__image" src={item} alt="img"/>
                         </div>
                     )
                 })
