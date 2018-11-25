@@ -3,22 +3,21 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import headphones from './../../images/icons/headphones.svg';
-import picture from './../../images/icons/picture.svg';
-import videoCamera from './../../images/icons/video-camera.svg';
-// import openBook from './../../images/icons/open-book-top-view.svg';
+import FormUplod from '../FormUpload'
+import headphones from '../../images/icons/headphones.svg';
+import picture from '../../images/icons/picture.svg';
+import videoCamera from '../../images/icons/video-camera.svg';
+// import openBook from '../../images/icons/open-book-top-view.svg';
 
-import './style.css';
+import './style.scss';
 
 class MediaPage extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            error: null,
-            isLoaded: false,
-            data: []
-        }
+    state = {
+        error: null,
+        isLoaded: false,
+        data: []
     }
+
 
     componentDidMount() {
         axios.get('http://localhost:9000/file_info')
@@ -48,13 +47,17 @@ class MediaPage extends React.Component {
           } else {
             return(
                 <div className="media__container">
-                    <div>Searching input</div>
+                    <FormUplod />
+                    <div>Selector input</div>
+                    <div>Search input</div>
                     <div className="mediapage__container">
                         {
                             data.map((item, index) => {
                                 return(
-                                    (item.type === 'image/jpeg' || item.type === 'audio/mpeg' || item.type === 'video/mp4') && 
-                                    <div className="meadia__item" key={index}>
+                                    (item.type === 'image/jpeg' 
+                                    || item.type === 'audio/mpeg' 
+                                    || item.type === 'video/mp4') 
+                                    && <div className="meadia__item" key={index}>
                                         <Link to={`/media/${item.fileId}`}>
                                             { item.type === 'image/jpeg' && <img src={picture} alt="img of img" /> }
                                             { item.type === 'audio/mpeg' && <img src={headphones} alt="music img" /> }

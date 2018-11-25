@@ -4,37 +4,32 @@ import sound from './../../images/carousel/sound.jpg';
 import video from './../../images/carousel/video.jpg';
 import text from './../../images/carousel/text.jpg';
 import add_yours from './../../images/carousel/add_yours.jpg';
-import './style.css';
+import './style.scss';
 
 class ImageCarousel extends React.Component {
-    constructor(){
-        super();
-        this.state = {
-            activeIndex: 0,
-            carousel: [
-                {
-                    "title": "watch the video",
-                    "src": video
-                },
-                {
-                    "title": "listen to audio",
-                    "src": sound
-                },
-                {
-                    "title": "read the text",
-                    "src": text
-                },
-                {
-                    "title": "add yours",
-                    "src": add_yours
-                }
-            ]
-        };
-        this.onNextClick = this.onNextClick.bind(this);
-        this.onPrevClick = this.onPrevClick.bind(this);
+    state = {
+        activeIndex: 0,
+        carousel: [
+            {
+                "title": "watch the video",
+                "src": video
+            },
+            {
+                "title": "listen to audio",
+                "src": sound
+            },
+            {
+                "title": "read the text",
+                "src": text
+            },
+            {
+                "title": "add yours",
+                "src": add_yours
+            }
+        ]
     }
 
-    onNextClick() {
+    onNextClick = () => {
         if(this.state.activeIndex < this.state.carousel.length -1) {
             this.setState({activeIndex: this.state.activeIndex + 1});
         } else {
@@ -42,7 +37,7 @@ class ImageCarousel extends React.Component {
         }
     }
 
-    onPrevClick() {
+    onPrevClick = () => {
         if(this.state.activeIndex > 0) {
             this.setState({activeIndex: this.state.activeIndex - 1});
         } else {

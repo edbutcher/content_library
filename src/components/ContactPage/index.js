@@ -2,7 +2,7 @@ import React from 'react';
 
 // import GoogleMapPart from './../GoogleMapPart';
 import conversation from './../../images/contact/conversation.jpg';
-import './style.css';
+import './style.scss';
 
 const ContactPage = () => {
     return(

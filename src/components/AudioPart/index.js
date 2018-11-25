@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './style.css';
+import './style.scss';
 
 const AudioPart = (props) => {
     const { fileName, type, url } = props.audio;
