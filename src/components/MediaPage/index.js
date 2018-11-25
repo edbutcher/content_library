@@ -1,13 +1,10 @@
 import React from 'react';
 
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
-import FormUplod from '../FormUpload'
-import headphones from '../../images/icons/headphones.svg';
-import picture from '../../images/icons/picture.svg';
-import videoCamera from '../../images/icons/video-camera.svg';
-// import openBook from '../../images/icons/open-book-top-view.svg';
+import FormUplod from '../FormUpload';
+import InputSelector from '../InputSelector';
+import PrevIconComponent from '../PrevIconComponent';
 
 import './style.scss';
 
@@ -17,7 +14,6 @@ class MediaPage extends React.Component {
         isLoaded: false,
         data: []
     }
-
 
     componentDidMount() {
         axios.get('http://localhost:9000/file_info')
@@ -48,37 +44,17 @@ class MediaPage extends React.Component {
             return(
                 <div className="media__container">
                     <FormUplod />
-                    <div>Selector input</div>
+                    <InputSelector />
                     <div>Search input</div>
                     <div className="mediapage__container">
-                        {
-                            data.map((item, index) => {
-                                return(
-                                    (item.type === 'image/jpeg' 
-                                    || item.type === 'audio/mpeg' 
-                                    || item.type === 'video/mp4') 
-                                    && <div className="meadia__item" key={index}>
-                                        <Link to={`/media/${item.fileId}`}>
-                                            { item.type === 'image/jpeg' && <img src={picture} alt="img of img" /> }
-                                            { item.type === 'audio/mpeg' && <img src={headphones} alt="music img" /> }
-                                            { item.type === 'video/mp4' && <img src={videoCamera} alt="video img" /> }
-                                            {/* { item.type === 'image/jpeg' && <img src={openBook} alt="text img" /> } */}
-                                            <div>
-                                                { item.fileName }
-                                            </div>
-                                        </Link>
-                                    </div>
-                                )
-                            })
+                        { 
+                            data.map((item, index) => <PrevIconComponent item={item} key={index}/>)
                         }
                     </div>
                     <div>Client pagination</div>
                 </div>
-                
             );
           }
-
-        
     };
 };
 
