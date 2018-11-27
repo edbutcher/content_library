@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import axios from 'axios';
 
@@ -8,7 +8,7 @@ import PrevIconComponent from '../PrevIconComponent';
 
 import './style.scss';
 
-class MediaPage extends React.Component {
+class MediaPage extends Component {
     state = {
         error: null,
         isLoaded: false,

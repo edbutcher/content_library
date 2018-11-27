@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ImageCarousel from '../ImageCarousel';
-import ImageGallery from '../ImageGalery';
+import ImageGallery from '../ImageGallery';
 
 import './style.css';
 

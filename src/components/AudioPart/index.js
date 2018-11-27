@@ -3,15 +3,18 @@ import React from 'react';
 import './style.scss';
 
 const AudioPart = (props) => {
-    const { fileName, type, url } = props.audio;
+    const { fileName, type } = props.selectedItem;
+    const url = 'http://localhost:9000/file/';
 
-    return <audio controls>
-        <h3>{fileName}</h3>
+    return <div>
+        <audio controls>
         <source 
             src={`${url}${fileName}`} 
             type={type} 
         />
-    </audio>
+         </audio>
+    <h3>{fileName}</h3>
+    </div>
 }
 
 export default AudioPart;
