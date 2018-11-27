@@ -1,32 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import './style.scss';
+import style from './style.scss';
 
-class InputSelector extends Component {
-    constructor(props) {
-        super(props)
-        this.state = { value: 'all' }
-    }
+const InputSelector = (props) => {
+    const { selectorCategory, selectorFilterChange} = props
 
-    handleChange = event => {
-        this.setState({value: event.target.value});
-    }
+    return (
+        <div>
+            <label>
+            Select type of files:
+            <select value={ selectorCategory } onChange={ event => selectorFilterChange(event.target.value) }>
+                <option style={style} value="all">all</option>
+                <option value="image">image</option>
+                <option value="audio">audio</option>
+                <option value="video">video</option>
+            </select>
+            </label>
+        </div>
+    )
 
-    render() {
-        return (
-            <div>
-                <label>
-                Select type of files:
-                <select value={this.state.value} onChange={this.handleChange}>
-                    <option value="all">all</option>
-                    <option value="image">image</option>
-                    <option value="audio">audio</option>
-                    <option value="video">video</option>
-                </select>
-                </label>
-            </div>
-        )
-    };
 };
 
 export default InputSelector;

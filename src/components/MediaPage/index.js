@@ -12,7 +12,9 @@ class MediaPage extends React.Component {
     state = {
         error: null,
         isLoaded: false,
-        data: []
+        data: [],
+        selectorCategory: 'all',
+        chank: 0
     }
 
     componentDidMount() {
@@ -33,6 +35,16 @@ class MediaPage extends React.Component {
               )
     }
 
+    selectorFilter = arr => {
+        if(this.state.selectorCategory === 'all') {
+            return arr
+        }
+
+        return arr.filter(item => item.type.split('/')[0] === this.state.selectorCategory)
+    }
+
+    selectorFilterChange = value => this.setState({selectorCategory: value})
+
     render() {
         const { error, isLoaded, data } = this.state;
 
@@ -44,11 +56,14 @@ class MediaPage extends React.Component {
             return(
                 <div className="media__container">
                     <FormUplod />
-                    <InputSelector />
+                    <InputSelector 
+                        selectorCategory={this.state.selectorCategory} 
+                        selectorFilterChange={this.selectorFilterChange}
+                    />
                     <div>Search input</div>
                     <div className="mediapage__container">
                         { 
-                            data.map((item, index) => <PrevIconComponent item={item} key={index}/>)
+                            this.selectorFilter(data).map((item, index) => <PrevIconComponent item={item} key={index}/>)
                         }
                     </div>
                     <div>Client pagination</div>
