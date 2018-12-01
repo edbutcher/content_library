@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { NavLink } from 'react-router-dom';
+
 import iconMenu from './../../images/icons/icon-menu.svg';
-import './style.css';
+import './style.scss';
 
 class Nav extends React.Component {
     constructor() {
@@ -19,20 +20,51 @@ class Nav extends React.Component {
         }));
     }
 
+    hideClick() {
+        this.setState(state => ({
+            isActive: false
+        }));
+    }
+
     render() {
         return(
             <nav className="Navbar">
-                    <NavLink to="/" activeClassName="Navbar__Link--active" exact className="Navbar__Link Navbar__Link-brand">
+                <div className="Navbar__title">
+                    <NavLink 
+                        to="/" 
+                        exact 
+                        className="Navbar__Link Navbar__Link-brand" 
+                        activeClassName="active" 
+                        onClick={this.hideClick}
+                    >
                         Library
                     </NavLink>
-                    <div className="Navbar__Link Navbar__Link-toggle" onClick={this.handleClick} >
-                        <img src={iconMenu} alt="icon menu" />
-                    </div>
-                    <div className={this.state.isActive ? "Navbar__Items Navbar__ToggleShow" : "Navbar__Items"}>
-                        <NavLink to="/media" activeClassName="Navbar__Link--active" className="Navbar__Link" >Media</NavLink>
-                        {/* <NavLink to="/upload" activeClassName="Navbar__Link--active" className="Navbar__Link">Upload</NavLink> */}
-                        <NavLink to="/contact" activeClassName="Navbar__Link--active" className="Navbar__Link">Contact</NavLink>
-                    </div>
+                    <img 
+                        className="Navbar__Link Navbar__Link-toggle"
+                        onClick={this.handleClick}
+                        src={iconMenu} 
+                        alt="icon menu" 
+                    />
+                </div>
+
+                <div className={this.state.isActive ? "Navbar__Items-toggleShow" : "Navbar__Items"}>
+                    <NavLink 
+                        to="/media" 
+                        className="Navbar__Link" 
+                        activeClassName="active" 
+                        onClick={this.hideClick}
+                    >
+                        Media
+                    </NavLink>
+                    <NavLink 
+                        to="/contact" 
+                        className="Navbar__Link" 
+                        activeClassName="active" 
+                        onClick={this.hideClick}
+                    >
+                        Contacts
+                    </NavLink>
+                </div>
             </nav>
         );
     };

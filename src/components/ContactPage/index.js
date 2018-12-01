@@ -2,6 +2,8 @@ import React from 'react';
 
 // import GoogleMapPart from './../GoogleMapPart';
 import conversation from './../../images/contact/conversation.jpg';
+import librarySvg from '../../images/icons/library.svg';
+
 import './style.scss';
 
 const ContactPage = () => {

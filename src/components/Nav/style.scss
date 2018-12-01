@@ -1,0 +1,83 @@
+.Navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.Navbar__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+img.Navbar__Link {
+    height: 3rem;
+}
+
+.Navbar__Items {
+    display: none;
+
+    &-toggleShow {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        & .Navbar__Link {   
+            transition: background-color 500ms;
+            background-color:rgba(0, 0, 0, 0.6);
+        }
+    }
+}
+
+.Navbar__Link,
+a:visited.Navbar__Link {
+    text-decoration: none;
+    color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 0 1rem;
+    height: 8rem;
+    font-size: 4rem;
+    font-family: 'Patrick Hand', Helvetica, Arial, sans-serif;
+}
+
+a.active,
+a:hover.Navbar__Link{
+    background-color: rgb(0, 0, 0);
+}
+
+a.Navbar__Link-brand,
+a:visited.Navbar__Link-brand {
+    font-family: 'Sedgwick Ave', cursive;
+    font-size: 4rem;
+    color: #418aff;
+}
+
+
+@media only screen and (min-width: 600px) {
+
+    .Navbar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: auto;
+        max-width: 1200px;
+    }
+
+    .Navbar__Link-toggle {
+        display: none;
+    }
+
+    .Navbar__Items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+    
+}

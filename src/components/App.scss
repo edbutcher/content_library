@@ -1,23 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand|Sedgwick+Ave');
+
 html {
     font-size: 62.5%;
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Patrick Hand', Helvetica, Arial, sans-serif;
     font-size: 1.6rem;
     background: rgba(97, 97, 97, 0.2);
     min-height: 100vh;
 }
-
-
-/* button {
-    cursor: pointer;
-}
-
-button:disabled {
-    cursor: default;
-}
-
-.is-active {
-    font-weight: bold;
-} */
