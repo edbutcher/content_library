@@ -21,6 +21,7 @@ class Nav extends React.Component {
     }
 
     hideClick() {
+        // Doesn't work well.
         this.setState(state => ({
             isActive: false
         }));

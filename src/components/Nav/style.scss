@@ -46,7 +46,7 @@ a:visited.Navbar__Link {
     font-family: 'Patrick Hand', Helvetica, Arial, sans-serif;
 }
 
-a.active,
+a.Navbar__Link.active,
 a:hover.Navbar__Link{
     background-color: rgb(0, 0, 0);
 }

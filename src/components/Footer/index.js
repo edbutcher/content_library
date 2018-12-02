@@ -7,10 +7,32 @@ const Footer = () => {
     return(
         <footer id="footer">
             <div className="footer__container">
-                <NavLink to="/" >Home</NavLink>
-                <NavLink to="/media" >Media</NavLink>
-                <NavLink to="/contact" >Contact</NavLink>
-                <p>Library ©</p>
+                <div className="footer__links">
+                    <NavLink 
+                        exact 
+                        to="/" 
+                        className="footer__link"
+                        activeClassName="active" 
+                    >
+                        Home
+                    </NavLink>
+                    <NavLink  
+                        to="/media" 
+                        className="footer__link" 
+                        activeClassName="active" 
+                    >
+                        Media
+                    </NavLink>
+                    <NavLink  
+                        to="/contact" 
+                        className="footer__link" 
+                        activeClassName="active" 
+                    >
+                        Contacts
+                    </NavLink>
+                </div>
+                
+                <p className="footer__item">Library ©</p>
             </div>
         </footer>
     );
