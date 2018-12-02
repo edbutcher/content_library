@@ -1,10 +1,12 @@
 import React from 'react';
 
-import GoogleMapPart from './../GoogleMapPart';
-import conversation from './../../images/contact/conversation.jpg';
+import GoogleMapPart from '../GoogleMapPart';
+import myConfig from '../../myConfig';
+
+import conversation from '../../images/contact/conversation.jpg';
+import unicorn from '../../images/icons/unicorn.svg';
 
 import './style.scss';
-import myConfig from '../../myConfig';
 
 
 const ContactPage = () => {
@@ -14,26 +16,45 @@ const ContactPage = () => {
                 <div className="contactTitle">
                     <div className="contactTitle__text">
                         <h1>Library</h1>
-                        <p>We strive to give everyone the opportunity to show themselves and see others.</p>
+                        <p>We are committed to giving everyone the opportunity to share</p>
                         </div>
-                    <img className="contactTitle__image" src={conversation} alt="img"/>
+                    <img className="contactTitle__image" src={ conversation } alt="img"/>
                 </div>
             </section>
+
             <section className="contact__container">
-                <div>
-                    <GoogleMapPart isMarkerShown
+                <div className="contact__title">
+                    <h1>Adress</h1>
+                    <p>
+                        1, Maidan Nezalezhnosti, Kyiv, 02000
+                        <br/>
+                        Phone number: +380 77 777 7777
+                    </p>
+                </div>
+                <div className="contact__image">
+                    <GoogleMapPart 
+                        isMarkerShown
                         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${myConfig.mapsKey}&v=3.exp&libraries=geometry,drawing,places`}
                         loadingElement={<div style={{ height: `100%` }} />}
-                        containerElement={<div style={{ height: `400px` }} />}
+                        containerElement={<div style={{ height: `40rem` }} />}
                         mapElement={<div style={{ height: `100%` }} />}
                     />
                 </div>
-                <div>
-                    <p>Adress: 1, Maidan Nezalezhnosti, Kyiv, 02000</p>
-                    <p>Phone number: +380 77 777 7777 (number is unavailable)</p>
-                </div>    
             </section>
-            <section className="contact__container">Img with name</section>
+
+            <section className="contact__container">
+                <div className="contact__title">
+                    <h1>Page Founder</h1>
+                    <p>
+                        Name: Aleksandr Poliakov
+                        <br/>
+                        Position: Senior dreamer
+                    </p>
+                </div>
+                <div className="contact__image">
+                    <img src={ unicorn } alt="img"/>
+                </div>
+            </section>
         </main>
     );
 };

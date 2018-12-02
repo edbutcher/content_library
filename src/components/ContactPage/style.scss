@@ -1,8 +1,3 @@
-.contact__container {
-    max-width: 1200px;
-    margin: auto;
-}
-
 .contactTitle {
     position: relative;
     display: flex;
@@ -18,15 +13,69 @@
 
 .contactTitle__text {
     position: absolute;
-    font-size: 3rem;
+    width: 80%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: rgb(0, 0, 0);
+    color: #fff;
     text-align: center;
+
+    & h1 {
+        color: #418aff;
+        font-size: 6rem;
+        font-family: 'Sedgwick Ave', cursive;
+    }
+
+    & p {
+        font-size: 2.5rem;
+    }
 }
 
-.contactTitle__text h1 {
-    color: #418aff;
-    font-family: 'Sedgwick Ave', cursive;
+.contact__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.contact__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    color: #fff;
+    background-color: rgba(97, 97, 97, 0.5);
+    padding: 1rem;
+
+    & h1 {
+        font-size: 4rem;
+    }
+
+    & p {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .contact__container {
+        flex-direction: row;
+        justify-content: space-between;
+
+        & .contact__title,
+        .contact__image {
+            width: 50%;
+            height: 40rem;
+            padding: 0;
+        }
+    }
+
+    .contact__container:first-child {
+        order: 1;
+        background-color: red;
+    }
+
+    .contact__image img {
+        height: 100%;
+    }
 }
