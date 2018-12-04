@@ -70,12 +70,9 @@
         }
     }
 
-    .contact__container:first-child {
-        order: 1;
-        background-color: red;
-    }
-
     .contact__image img {
+        display: flex;
         height: 100%;
+        margin: auto;
     }
 }

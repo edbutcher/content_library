@@ -23,7 +23,8 @@ class MediaPage extends Component {
                 (result) => {
                   this.setState({
                     isLoaded: true,
-                    data: result.data
+                    data: result.data,
+                    chank: Math.ceil(result.data.length /10)
                   });
                 },
                 (error) => {
@@ -66,7 +67,7 @@ class MediaPage extends Component {
                             this.selectorFilter(data).map((item, index) => <PrevIconComponent item={item} key={index}/>)
                         }
                     </div>
-                    <div>Client pagination</div>
+                    <div>Client pagination {this.state.chank}</div>
                 </div>
             );
           }
